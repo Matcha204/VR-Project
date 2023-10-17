@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Maze</title>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>    
+  <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+</head>
+
+<body>
+  <a-scene id="scene" inspector-plugin-recast>
+
+    
+    <a-entity id="environment" environment="preset:arches;skyColor:#33B8E5 ; skyType:gradient; lighting:point;">
+    </a-entity>
+    
+    <!--Camera and Cursor-->
+    <a-entity id="camera" camera position="0 1.6 0" wasd-controls="acceleration:200"
+      look-controls="pointerLockEnabled: false">
+      <a-cursor></a-cursor>
+    </a-entity>
+    <a-assets>
+    <a-asset-item id="collider" src="./navmesh.gltf"></a-asset-item>
+    <audio id="shoot" src="./sounds/shoot.mp3"></audio>
+  </a-assets>
+   
+    <a-entity id="camera" camera position="0 1.6 0"
+    look-controls="pointerLockEnabled: false">
+    <a-cursor></a-cursor>
+    </a-entity>
+
+    
+    
+    <a-entity id="sound2" sound="src: #footstep; poolSize:2;autoplay: false; volume: 4;loop:false"></a-entity>
+
+    
+    <a-entity id="header" position="1 -4 0">
+        <!-- Title -->
+        <a-entity
+          position="-28.5 21.5 0"
+          text="font: exo2bold; align: center; width: 40; color: black; value: Maze"
+        ></a-entity>
+      </a-entity>
+
+    
+    <a-entity id="navigation-mesh" gltf-model="#collider" visible="false" nav-mesh></a-entity>
+    
+    <!--Boxes-->
+    <a-box id="box0" position="0 0.5 2" color="#c7fff9" depth="1" height="10" width="100"></a-box>
+    <a-box id="box1" position="0 0.5 -6.33437" color="#c7fff9" depth="1" height="1.5" width="10"></a-box>
+    <a-box id="box2" position="-5.63047 0.5 -9.65585" color="#c7fff9" depth="1" height="10" width="10"></a-box>
+    <a-box id="box3" position="2.5 0.5 -17.4559" color="#c7fff9" depth="1" height="10" width="10"></a-box>
+    <a-box id="box4" position="0 0.5 -21.58323" color="#c7fff9" depth="1" height="10" width="10"></a-box>
+    <a-box id="box5" position="-12.01326 0.5 -14.59535" color="#c7fff9" depth="1" height="10" width="10"></a-box>
+    <a-box id="box6" position="-7.73232 0.5 -22.17969" color="#c7fff9" depth="10" height="10" width="1"></a-box>
+    <a-box id="box7" position="-8.54977 0.5 -5.3525" color="#c7fff9" depth="20" height="10" width="1"></a-box>
+    <a-box id="box8" position="-4.67013 0.5 -18.0932" color="#c7fff9" depth="10" height="10" width="1"></a-box>
+    <a-box id="box9" position="5.90667 0.5 -15" color="#c7fff9" depth="10" height="10" width="1"></a-box>
+    <a-box id="box10" position="3.59768 0.5 -8.18822" color="#c7fff9" depth="20" height="10" width="1"></a-box>
+    <a-box id="box11" position="7.63783 0.5 -28.06952" color="#c7fff9" depth="10" height="10" width="1"></a-box>
+    <a-box id="box12" position="-0.82929 0.5 -30.18869" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.123rf.com%2Fclipart-vector%2Fyou_won.html&psig=AOvVaw2SfTLGC9VSv_yJVCTTZV2h&ust=1697237446357000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOCiuarM8YEDFQAAAAAdAAAAABAJ" depth="1" height="10" width="10"></a-box>
+    <a-box id="box13" position="0 10 0" color="#c7fff9" depth="100" height="10" width="100"></a-box>
+  </a-scene>
+
+</body>
+
+</html>
